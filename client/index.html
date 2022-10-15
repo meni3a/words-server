@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/app.js"></script>
+    <link rel="stylesheet" href="/app.css">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="icon" href="/assets/icons/android/android-launchericon-96-96.png">
+    <title>كَلِمَات</title>
+
+</head>
+
+<body>
+    <div class="wrapper center">
+        <div id="container"></div>
+        <div id="app-header" class="center">
+            <img src="/assets/images/front_img.png" width="200" height="200" alt="">
+            <h1 style="color:#57acc1">كَلِمَات</h1>
+            <h3 id="totalRank"></h3>
+        </div>
+        <br>
+        <br>
+        <button id="play-btn" class="button center">Start</button>
+        <div class="topleft">
+            <div id="home-btn">
+                <img src="/assets/images/home-icon.png" width="49" height="49" alt="">
+            </div>
+        </div>
+        <div class="topright">
+            <div id="progress"></div>
+        </div>
+        <div class="bottomright">
+            <div class="round">
+                <div id="speaker">
+                    <div id="mute" class="mute"> </div>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('service-worker.js').then(function (registration) {
+                    // Registration was successful
+                    console.log('Registered!');
+                }, function (err) {
+                    // registration failed :(
+                    console.log('ServiceWorker registration failed: ', err);
+                }).catch(function (err) {
+                    console.log(err);
+                });
+
+                // navigator.serviceWorker.ready.then(function (registration) {
+                //     if (!registration.pushManager) {
+                //         console.log('No push notifications support.');
+                //         return false;
+                //     }
+                //     //To subscribe `push notification` from push manager
+                //     registration.pushManager.subscribe({
+                //         userVisibleOnly: true //Always show notification when received
+                //     })
+                //         .then(function (subscription) {
+                //             console.log('Subscribed.');
+                //         })
+                //         .catch(function (error) {
+                //             console.log('Subscription error: ', error);
+                //         });
+                // })
+
+                // window.addEventListener('beforeinstallprompt', e => {
+                //     console.log('beforeinstallprompt Event fired');
+                //     e.preventDefault();
+                //     // Stash the event so it can be triggered later.
+                //     this.deferredPrompt = e;
+                //     return false;
+                // });
+                // // When you want to trigger prompt:
+                // this.deferredPrompt.prompt();
+                // this.deferredPrompt.userChoice.then(choice => {
+                //     console.log(choice);
+                // });
+                // this.deferredPrompt = null;
+            });
+
+
+        } else {
+            console.log('service worker is not supported');
+        }
+    </script>
+
+</body>
+
+</html>
