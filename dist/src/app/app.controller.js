@@ -33,9 +33,6 @@ let AppController = class AppController {
         const app = (0, class_transformer_1.plainToInstance)(app_entity_1.App, appObj);
         return app.meniTester() + JSON.stringify((0, class_transformer_1.instanceToPlain)(app));
     }
-    getTest() {
-        return 'Hello World!';
-    }
     createMeni(data) {
         return JSON.stringify(data);
     }
@@ -47,12 +44,6 @@ __decorate([
     __metadata("design:returntype", String)
 ], AppController.prototype, "getHello", null);
 __decorate([
-    (0, common_1.Get)(),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", String)
-], AppController.prototype, "getTest", null);
-__decorate([
     (0, common_1.Post)("test1"),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
@@ -60,7 +51,7 @@ __decorate([
     __metadata("design:returntype", String)
 ], AppController.prototype, "createMeni", null);
 AppController = __decorate([
-    (0, common_1.Controller)(),
+    (0, common_1.Controller)('/fd'),
     __metadata("design:paramtypes", [app_service_1.AppService])
 ], AppController);
 exports.AppController = AppController;

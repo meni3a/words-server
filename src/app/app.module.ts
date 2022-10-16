@@ -31,7 +31,7 @@ import { MailModule } from 'src/mail/mail.module';
 
 
     ServeStaticModule.forRoot({
-      serveRoot: '/client',
+      serveRoot: '/',
       rootPath: join(__dirname, '../../../client'),
     }),
 

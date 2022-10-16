@@ -5,7 +5,7 @@ import { AppService } from './app.service';
 import { AuthGuard } from '@nestjs/passport';
 import path from 'path';
 
-@Controller()
+@Controller('/fd')
 export class AppController {
   constructor(private readonly appService: AppService) { }
 
@@ -27,10 +27,6 @@ export class AppController {
 
   }
 
-  @Get()
-  getTest(): string {
-    return 'Hello World!';
-  }
 
 
   @Post("test1")
