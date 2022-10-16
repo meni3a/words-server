@@ -3,10 +3,12 @@ import { instanceToPlain, plainToInstance } from 'class-transformer';
 import { App } from './entities/app.entity';
 import { AppService } from './app.service';
 import { AuthGuard } from '@nestjs/passport';
+import path from 'path';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) { }
+
 
   @Get("test")
   getHello(): string {

@@ -29,8 +29,15 @@ import { MailModule } from 'src/mail/mail.module';
       limit: 10,
     }),
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '../../public'),
+      serveRoot: '/public',
+      rootPath: join(__dirname, '../../../public'),
     }),
+
+    ServeStaticModule.forRoot({
+      serveRoot: '/client',
+      rootPath: join(__dirname, '../../../client'),
+    }),
+
 
     MongooseModule.forRoot('mongodb://localhost:27017', {
       dbName: 'test',
