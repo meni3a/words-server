@@ -31,8 +31,8 @@ AppModule = __decorate([
                 limit: 10,
             }),
             serve_static_1.ServeStaticModule.forRoot({
-                serveRoot: '/',
-                rootPath: (0, path_1.join)(__dirname, '../../../client'),
+                serveRoot: '/client',
+                rootPath: (0, path_1.join)(__dirname, '../../client'),
             }),
             mongoose_1.MongooseModule.forRoot('mongodb://localhost:27017', {
                 dbName: 'test',
