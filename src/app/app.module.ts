@@ -28,10 +28,7 @@ import { MailModule } from 'src/mail/mail.module';
       ttl: 10,
       limit: 10,
     }),
-    ServeStaticModule.forRoot({
-      serveRoot: '/public',
-      rootPath: join(__dirname, '../../../public'),
-    }),
+
 
     ServeStaticModule.forRoot({
       serveRoot: '/client',

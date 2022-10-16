@@ -31,10 +31,6 @@ AppModule = __decorate([
                 limit: 10,
             }),
             serve_static_1.ServeStaticModule.forRoot({
-                serveRoot: '/public',
-                rootPath: (0, path_1.join)(__dirname, '../../../public'),
-            }),
-            serve_static_1.ServeStaticModule.forRoot({
                 serveRoot: '/client',
                 rootPath: (0, path_1.join)(__dirname, '../../../client'),
             }),
